@@ -1,7 +1,11 @@
 #Internal package file, do not edit.
-#Fri Mar 17 10:45:09 CET 2023
+#Fri Apr 21 12:56:55 CEST 2023
+1.base=/home/monica/AndroidStudioProjects/JukeBox/app/build/intermediates/assets/debug
 0.baseType=DIRECTORY
-0.base=/home/monica/AndroidStudioProjects/JukeBox/app/build/intermediates/transforms/dexMerger/debug/0
+1.baseType=DIRECTORY
+count=2
+1.set=ASSET
 0.path=classes.dex
 0.set=DEX
-count=1
+0.base=/home/monica/AndroidStudioProjects/JukeBox/app/build/intermediates/transforms/dexMerger/debug/0
+1.path=Stars

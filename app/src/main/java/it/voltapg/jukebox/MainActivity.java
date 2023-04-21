@@ -16,9 +16,12 @@
 
 package it.voltapg.jukebox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,14 +35,34 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    final String TAG = "MainActivity";
+
     private int mCount = 0;
     private TextView mShowCount;
 
+    Button conta;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mShowCount = (TextView) findViewById(R.id.show_count);
+
+        Log.d(TAG,"Dentro onCreate()");
+
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.d(TAG, "Dentro onStart()");
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(getApplicationContext(), "Bentornato!", Toast.LENGTH_LONG).show();
+        Log.d(TAG,"Dentro onRestart()");
     }
 
     /*
@@ -66,5 +89,14 @@ public class MainActivity extends AppCompatActivity {
         mCount++;
         if (mShowCount != null)
             mShowCount.setText(Integer.toString(mCount));
+        if (mCount == 10) {
+        Log.d(TAG, "valore di conta: " + mCount);
+
+        Intent intent = new Intent(this, SecondActivity.class);
+        intent.putExtra("numero", mCount);
+        startActivity(intent);
+
+        }
     }
+
 }
